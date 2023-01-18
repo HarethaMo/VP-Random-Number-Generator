@@ -128,7 +128,8 @@ namespace Homework3
                     if (avg < number)
                         counter++;
                 }
-                lblOutput.Text += string.Format("\nThere are {0} numbers in the list that are bigger than the average.", counter);
+                double percentage = (double)counter / listBox1.Items.Count * 100;
+                lblOutput.Text += string.Format("\nThere are {0} Numbers in The List That are Larger Than The Average. Which Represents {1}%", counter, percentage.ToString("0.00"));
             }
             else
             {
@@ -147,11 +148,12 @@ namespace Homework3
                     if (avg > number)
                         counter++;
                 }
-                lblOutput.Text += string.Format("\nThere are {0} numbers in the list that are smaller than the average.", counter);
+                double percentage = (double)counter / listBox1.Items.Count * 100;
+                lblOutput.Text += string.Format("\nThere are {0} Numbers in The List That are Smaller Than The Average. Which Represents {1}%", counter, percentage.ToString("0.00"));
             }
             else
             {
-                MessageBox.Show("The average has not been calculated yet!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("The Average has not been calculated yet!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -164,7 +166,7 @@ namespace Homework3
                 if (max < number)
                     max = number;
             }
-            lblOutput.Text += string.Format("\nThe maximum number value in this list is {0}.", max);
+            lblOutput.Text += string.Format("\nThe Maximum Number Value in This List is {0}.", max);
         }
 
         private void btnGetMin_Click(object sender, EventArgs e)
@@ -176,7 +178,7 @@ namespace Homework3
                 if (min > number)
                     min = number;
             }
-            lblOutput.Text += string.Format("\nThe minimum number value in this list is {0}.", min);
+            lblOutput.Text += string.Format("\nThe Minimum Number Value in This List is {0}.", min);
         }
     }
 }
